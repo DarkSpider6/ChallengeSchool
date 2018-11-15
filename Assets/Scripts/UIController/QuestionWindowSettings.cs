@@ -7,6 +7,11 @@ namespace UIController.Detail
         [SerializeField]
         private QuestionItem[] questions;
 
+        public int QuestionsAmount
+        {
+            get { return questions.Length; }
+        }
+
         public QuestionItem GetQuestion(string questionId)
         {
             for (int i = 0; i < questions.Length; i++)

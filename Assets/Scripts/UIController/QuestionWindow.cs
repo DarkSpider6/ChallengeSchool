@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ namespace UIController.Detail
         private UnityEvent SuccessDelegate;
         [SerializeField]
         private UnityEvent FailedDelegate;
+        [SerializeField]
+        private UnityEvent WinDelegate;
 
         [SerializeField]
         private Text questionLabel;
@@ -27,6 +30,8 @@ namespace UIController.Detail
         private QuestionWindowSettings settings;
 
         private QuestionItem currentItem;
+        private List<string> correctAnswers = new List<string>();
+        
 
         public void Show(string questionId)
         {
@@ -43,12 +48,20 @@ namespace UIController.Detail
 
         public void SelectAnswer(int answerId)
         {
+            HiddenDelegate.Invoke();
+
             if (currentItem.CorrectAnswerId == answerId)
+            {
                 SuccessDelegate.Invoke();
+                if (!correctAnswers.Contains(currentItem.QuestionId))
+                {
+                    correctAnswers.Add(currentItem.QuestionId);
+                    if (correctAnswers.Count == settings.QuestionsAmount)
+                        WinDelegate.Invoke();
+                }
+            }
             else
                 FailedDelegate.Invoke();
-
-            HiddenDelegate.Invoke();
         }
 
         private void Start()
