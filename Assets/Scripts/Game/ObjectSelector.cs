@@ -8,6 +8,12 @@ namespace Game.Detail
         [SerializeField]
         private LayerMask selectableLayers;
 
+        public SelectableObject LastObject
+        {
+            get;
+            private set;
+        }
+
         public SelectableObject CurrentObject
         {
             get;
@@ -29,6 +35,7 @@ namespace Game.Detail
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, selectableLayers);
                 if (hit)
                 {
+                    LastObject = CurrentObject;
                     CurrentObject = hit.transform.GetComponent<SelectableObject>();
                     WasSelectedInThisFrame = true;
                 }

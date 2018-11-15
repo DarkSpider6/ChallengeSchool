@@ -7,13 +7,24 @@ namespace Game.Detail
     {
         [SerializeField]
         private UnityEvent ReachedDelegate;
-
+        [SerializeField]
+        private Transform jumpPoint;
         [SerializeField]
         private Transform movePoint;
+
+        public bool MustJump
+        {
+            get { return jumpPoint != null; }
+        }
 
         public Vector2 GetPosition()
         {
             return movePoint.position;
+        }
+
+        public Vector2 GetJumpPosition()
+        {
+            return jumpPoint.position;
         }
 
         public void OnReachedOobject()

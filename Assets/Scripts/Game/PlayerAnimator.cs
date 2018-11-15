@@ -8,6 +8,8 @@ namespace Game.Detail
         private Animator animator;
         [SerializeField]
         private string walkParameterName;
+        [SerializeField]
+        private string jumpParameterName;
 
         public void StartWalk()
         {
@@ -17,6 +19,11 @@ namespace Game.Detail
         public void StopWalk()
         {
             animator.SetBool(walkParameterName, false);
+        }
+
+        public void Jump()
+        {
+            animator.SetTrigger(jumpParameterName);
         }
     }
 }
