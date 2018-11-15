@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game.Detail
 {
     public class SelectableObject : MonoBehaviour
     {
+        [SerializeField]
+        private UnityEvent ReachedDelegate;
+
         [SerializeField]
         private Transform movePoint;
 
@@ -12,5 +16,9 @@ namespace Game.Detail
             return movePoint.position;
         }
 
+        public void OnReachedOobject()
+        {
+            ReachedDelegate.Invoke();
+        }
     }
 }

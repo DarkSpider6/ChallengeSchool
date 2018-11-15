@@ -9,6 +9,11 @@ namespace Game.Detail
         [SerializeField]
         private ObjectSelector objectSelector;
 
+        public void OnReachObject()
+        {
+            objectSelector.CurrentObject.OnReachedOobject();
+        }
+
         private void Update()
         {
             objectSelector.Update();

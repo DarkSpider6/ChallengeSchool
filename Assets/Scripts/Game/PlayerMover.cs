@@ -10,6 +10,8 @@ namespace Game.Detail
         private UnityEvent StartedMoveDelegate;
         [SerializeField]
         private UnityEvent StopedMoveDelegate;
+        [SerializeField]
+        private UnityEvent ReachedDelegate;
 
         [SerializeField]
         private float speed;
@@ -43,6 +45,7 @@ namespace Game.Detail
                 {
                     isActive = false;
                     StopedMoveDelegate.Invoke();
+                    ReachedDelegate.Invoke();
                 }
                 else
                     content.position = Vector2.MoveTowards(content.position, destination, speed*Time.deltaTime);

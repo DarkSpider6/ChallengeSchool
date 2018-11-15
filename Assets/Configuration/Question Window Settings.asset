@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564561f5b1fc31d4cb3c573d2f814940, type: 3}
+  m_Name: Question Window Settings
+  m_EditorClassIdentifier: 
+  questions:
+  - questionId: 1
+    question: "Pedro Calder\xF3n de  la Barca escribi\xF3 las siguientes  obras... "
+    answers:
+    - Don Juan Tenorio y  La Celestina
+    - "La vida es Sue\xF1o y  el Alcalde de  Zalamea"
+    - "Don Juan Tenorio y  La vida es Sue\xF1o"
+    correctAnswerId: 1
+  - questionId: 2
+    question: "\xBFQui\xE9n era el esposo de Frida Kahlo?"
+    answers:
+    - Diego Rivera
+    - Juan Rulfo
+    - "Gabriel Garc\xEDa M\xE1rquez"
+    correctAnswerId: 0
+  - questionId: 3
+    question: "La telenovela Hasta que la plata nos separe fue escrita por el guionista
+      colombiano\u2026"
+    answers:
+    - "Fernando Gait\xE1n"
+    - "Dago Garc\xEDa "
+    - "Andr\xE9s Salgado"
+    correctAnswerId: 0
+  - questionId: 4
+    question: "\xBFQu\xE9 pintores son exponentes del Surrealismo?"
+    answers:
+    - "Claude Monet y Salvador Dal\xED"
+    - Vincent van Gogh y Claude Monet
+    - "Salvador Dal\xED y Ren\xE9 Magritte"
+    correctAnswerId: 2
+  - questionId: 5
+    question: "\xBFCu\xE1l es la obra m\xE1s sanguinaria de William Shakespeare?"
+    answers:
+    - El rey Lear
+    - "Tito Andr\xF3nico"
+    - Otelo
+    correctAnswerId: 1
