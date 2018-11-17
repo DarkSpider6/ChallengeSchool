@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Game.Detail
@@ -7,6 +8,8 @@ namespace Game.Detail
     {
         [SerializeField]
         private UnityEvent ReachedDelegate;
+        [SerializeField]
+        private UnityEvent ClearDelegate;
         [SerializeField]
         private Transform jumpPoint;
         [SerializeField]
@@ -30,6 +33,11 @@ namespace Game.Detail
         public void OnReachedOobject()
         {
             ReachedDelegate.Invoke();
+        }
+
+        public void Clear()
+        {
+            ClearDelegate.Invoke();
         }
     }
 }

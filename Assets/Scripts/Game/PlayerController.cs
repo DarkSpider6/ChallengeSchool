@@ -27,6 +27,11 @@ namespace Game.Detail
                 objectSelector.CurrentObject.OnReachedOobject();
         }
 
+        public void OnSuccess()
+        {
+            objectSelector.CurrentObject.Clear();
+        }
+
         public void OnJumpEnded()
         {
             if (!wasJump)
